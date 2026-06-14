@@ -81,12 +81,32 @@
   &__link_active {
     color: var(--color-light-s);
     border-bottom: 3px solid var(--color-primary);
+    cursor: default;
   }
+}
+
+.pets-page {
+  .logo__header,
+  .menu__link.menu__link_active {
+    color: var(--color-dark-3xl);
+  }
+
+  .logo__title,
+  .menu__link {
+    color: var(--color-dark-l);
+  }
+
 }
 
 
 @media (hover: hover) and (pointer: fine) {
   .menu__link:hover {
-      color: var(--color-light-s);
+    color: var(--color-light-s);
+  }
+
+  .pets-page {
+    .menu__link:hover {
+      color: var(--color-dark-3xl);
+    }
   }
 }
