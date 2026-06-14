@@ -10,4 +10,115 @@
   z-index: 100;
 
   min-height: 120px;
+
+  &__container {
+    flex-direction: row;
+    justify-content: space-between;
+
+    height: 60px;
+  }
+}
+
+.logo {
+  flex-shrink: 0;
+  display: block;
+  text-decoration: none;
+  margin-top: 1px;
+
+  &__title {
+    display: block;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+    color: var(--color-primary);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+  }
+
+  &__header {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1.21px;
+    color: var(--color-light-xl);
+    margin: 9px 0px 0px 4px;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    margin-bottom: 1px;
+    color: var(--color-dark-s);
+    border-bottom: transparent;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+  }
+
+  &__link_active {
+    color: var(--color-light-s);
+    border-bottom: 3px solid var(--color-primary);
+    cursor: default;
+  }
+}
+
+.pets-page {
+  .logo__header,
+  .menu__link.menu__link_active {
+    color: var(--color-dark-3xl);
+  }
+
+  .logo__title,
+  .menu__link {
+    color: var(--color-dark-l);
+  }
+
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+  .menu__link:hover {
+    color: var(--color-light-s);
+  }
+
+  .logo:hover .logo__title {
+    color: var(--color-light-xl);
+  }
+
+  .logo:hover .logo__header {
+    color: var(--color-primary);
+  }
+
+  .pets-page {
+    .menu__link:hover {
+      color: var(--color-dark-3xl);
+    }
+
+    .logo:hover .logo__title {
+      color: var(--color-dark-3xl);
+    }
+
+    .logo:hover .logo__header {
+      color: var(--color-dark-l);
+    }
+  }
 }
