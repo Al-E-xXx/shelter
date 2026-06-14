@@ -1,0 +1,7 @@
+@use './../abstracts';
+@use './../base';
+
+.about {
+  min-height: 588px;
+  background-color: var(--color-light-xl);
+}

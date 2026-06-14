@@ -1,0 +1,13 @@
+@use './../abstracts';
+@use './../base';
+
+.footer {
+  display: flex;
+  justify-content: center;
+
+  min-height: 350px;
+  padding: 40px 0px 0px 0px;
+
+  background: url(./../../assets/img/bg/grid.webp), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+
+}

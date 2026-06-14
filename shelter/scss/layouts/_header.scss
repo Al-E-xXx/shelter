@@ -1,0 +1,13 @@
+@use './../abstracts';
+@use './../base';
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  z-index: 100;
+
+  min-height: 120px;
+}

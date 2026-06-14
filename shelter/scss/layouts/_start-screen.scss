@@ -1,0 +1,11 @@
+@use './../abstracts';
+@use './../base';
+
+.start-screen {
+  display: flex;
+  justify-content: center;
+
+  min-height: 908px;
+
+  background: url(./../../assets/img/bg/grid.webp), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
