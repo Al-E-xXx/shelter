@@ -1,0 +1,7 @@
+@use './../abstracts';
+@use './../base';
+
+.donation {
+  min-height: 462px;
+  background: var(--color-light-l);
+}

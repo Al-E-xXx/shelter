@@ -1,3 +1,50 @@
+:root {
+  --color-light-xl: #ffffff;
+  --color-light-l: #f6f6f6;
+  --color-light-s: #fafafa;
+  --color-dark-s: #cdcdcd;
+  --color-dark-m: #b2b2b2;
+  --color-dark-l: #545454;
+  --color-dark-xl: #4c4c4c;
+  --color-dark-2xl: #444;
+  --color-dark-3xl: #292929;
+  --color-primary: #f1cdb3;
+  --color-primary-light: #fddcc4;
+  --start-screen-gradient-background: #211f20;
+  --footer-gradient-background: #211f20;
+}
+
+/*--- Fonts ---*/
+@font-face {
+  font-family: "Arial";
+  font-weight: 400;
+  font-style: italic;
+  src: url("./../fonts/arial/arial-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Arial";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./../fonts/arial/arial-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Georgia";
+  font-weight: 400;
+  font-style: italic;
+  src: url("./../fonts/georgia/georgia-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Georgia";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./../fonts/georgia/georgia-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Georgia";
+  font-weight: 700;
+  font-style: normal;
+  src: url("./../fonts/georgia/georgia-bold.woff2") format("woff2");
+}
 * {
   /*--- Disable outline light on touchscreen devices ---*/
   -webkit-tap-highlight-color: transparent;
@@ -120,4 +167,70 @@ figure {
 figcaption {
   display: block;
   margin-top: 0.5em;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  padding-left: clamp(30px, 30px + (40 - 30) * (100vw - 768px) / (1280 - 768), 40px);
+  padding-right: clamp(30px, 30px + (40 - 30) * (100vw - 768px) / (1280 - 768), 40px);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  min-height: 120px;
+}
+
+.main {
+  margin-top: -120px;
+}
+
+.start-screen {
+  display: flex;
+  justify-content: center;
+  min-height: 908px;
+  background: url(./../../assets/img/bg/grid.webp), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+
+.about {
+  min-height: 588px;
+  background-color: var(--color-light-xl);
+}
+
+.pets {
+  min-height: 877px;
+  background: var(--color-light-l);
+}
+
+.help {
+  min-height: 611px;
+  background-color: var(--color-light-xl);
+}
+
+.donation {
+  min-height: 462px;
+  background: var(--color-light-l);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  min-height: 350px;
+  padding: 40px 0px 0px 0px;
+  background: url(./../../assets/img/bg/grid.webp), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
 }/*# sourceMappingURL=style.css.map */

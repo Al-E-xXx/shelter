@@ -1,0 +1,7 @@
+@use './../abstracts';
+@use './../base';
+
+.pets {
+  min-height: 877px;
+  background: var(--color-light-l);
+}

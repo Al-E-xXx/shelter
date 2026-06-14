@@ -1,2 +1,20 @@
 @use './../abstracts';
 
+body {
+  min-height: 100dvh;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1280px;
+  padding-left: abstracts.fluid-clamp(30, 40, 768, 1280);
+  padding-right: abstracts.fluid-clamp(30, 40, 768, 1280);
+}
