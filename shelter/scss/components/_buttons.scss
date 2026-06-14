@@ -6,14 +6,13 @@
   align-items: center;
 
   height: 52px;
-  padding: 0 44px 0 45px;
-
-  border-radius: 26px;
+  padding: 0 42px 0 43px;
 
   background-color: var(--color-primary);
   color: var(--color-dark-3xl);
   text-decoration: none;
-  border: none;
+  border: 2px solid var(--color-primary);
+  border-radius: 26px;
 
   font-family: 'Georgia';
   font-weight: 400;
@@ -22,10 +21,36 @@
   letter-spacing: 0.06em;
 
   transition: var(--transition);
+
+  &_contur {
+    background-color: transparent;
+  }
+}
+
+.round-btn {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  background-color: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .oval-button:hover {
     background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+  }
+
+  .round-btn:hover {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
   }
 }

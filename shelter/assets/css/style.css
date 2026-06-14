@@ -11,6 +11,7 @@
   --color-primary: #f1cdb3;
   --color-primary-light: #fddcc4;
   --transition: 0.4s ease;
+  --slider-margin: 45px;
 }
 
 /*--- Fonts ---*/
@@ -196,12 +197,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 52px;
-  padding: 0 44px 0 45px;
-  border-radius: 26px;
+  padding: 0 42px 0 43px;
   background-color: var(--color-primary);
   color: var(--color-dark-3xl);
   text-decoration: none;
-  border: none;
+  border: 2px solid var(--color-primary);
+  border-radius: 26px;
   font-family: "Georgia";
   font-weight: 400;
   font-size: 17px;
@@ -209,10 +210,34 @@ body {
   letter-spacing: 0.06em;
   transition: var(--transition);
 }
+.oval-button_contur {
+  background-color: transparent;
+}
+
+.round-btn {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  background-color: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+}
 
 @media (hover: hover) and (pointer: fine) {
   .oval-button:hover {
     background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+  }
+  .round-btn:hover {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
   }
 }
 .header {
@@ -422,14 +447,137 @@ body {
 }
 
 .pets {
+  display: flex;
+  justify-content: center;
   min-height: 877px;
   background: var(--color-light-l);
+}
+.pets__title {
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 1.29;
+  letter-spacing: 2.25px;
+  text-align: center;
+  color: var(--color-dark-l);
+  margin: 80px 0px 0px 0px;
+  padding: 0px;
+  transform: translate(1px, 0px);
+}
+.pets__slider-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 435px;
+  margin: 0px;
+  overflow: hidden;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+}
+.pets__slider-btn-wrapper {
+  display: flex;
+  align-items: center;
+  width: auto;
+  flex-shrink: 0;
+  position: relative;
+}
+.pets__slider-btn-wrapper_left::before, .pets__slider-btn-wrapper_right::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(246, 246, 246);
+  background: linear-gradient(90deg, rgb(246, 246, 246) 0%, rgb(246, 246, 246) 50%, rgba(246, 246, 246, 0) 100%);
+  z-index: 1;
+}
+.pets__slider-wrapper {
+  margin: 0px;
+  padding: 60px 0px 60px 0px;
+  overflow: hidden;
+  display: flex;
+  width: 1080px;
+  position: relative;
+}
+.pets__slider-wrapper::before, .pets__slider-wrapper::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: rgb(246, 246, 246);
+  background: linear-gradient(90deg, rgb(246, 246, 246) 0%, rgb(246, 246, 246) 50%, rgba(246, 246, 246, 0) 100%);
+}
+.pets__slider {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  height: 435px;
+}
+.pets__slider-item {
+  width: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: var(--slider-margin);
+  margin-right: var(--slider-margin);
+  flex-shrink: 0;
+}
+.pets__slider-card {
+  width: 270px;
+  height: 100%;
+  border-radius: 9px;
+  overflow: hidden;
+  background-color: var(--color-light-s);
+  cursor: pointer;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+}
+.pets__slider-img {
+  display: block;
+  width: 270px;
+  height: 270px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: translate(-1px, -2px);
+}
+.pets__slider-card-title {
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+  padding: 0px;
+  margin: 30px 0px 0px 2px;
+  text-align: center;
+}
+.pets__card-btn {
+  display: flex;
+  margin: 31px auto 0px auto;
 }
 
 .pets-page .pets {
   min-height: 1342px;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .pets__slider-card:hover {
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-light-xl);
+    box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
+  .pets__slider-card:hover .oval-button {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+  }
+}
 .help {
   min-height: 611px;
   background-color: var(--color-light-xl);

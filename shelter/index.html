@@ -41,7 +41,7 @@
               love you more
               than anybody else in the world, you will see!
             </p>
-            <a class="start-screen__btn oval-button" href="#our-friends">Make a friend</a>
+            <a class="start-screen__btn oval-button" href="#pets">Make a friend</a>
           </div>
           <div class="start-screen__puppy"></div>
         </div>
@@ -70,11 +70,58 @@
       </div>
     </section>
 
-    <section class="pets full-width" id="our-friends">
-      <div class="container">
+    <section class="pets full-width" id="pets">
+      <div class="pets__container container">
+        <h3 class="pets__title">Our friends who<br>are looking for a house</h3>
 
+        <div class="pets__slider-container">
+          <div class="pets__slider-btn-wrapper pets__slider-btn-wrapper_left">
+            <button class="round-btn pets__slider-btn pets__slider-btn_prev">
+              <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="pets__slider-wrapper">
+            <ul class="pets__slider">
+              <li class="pets__slider-item">
+                <article class="pets__slider-card" data-index="3">
+                  <img class="pets__slider-img" src="./assets/img/pets/katrine.webp" alt="Katrine">
+                  <h4 class="pets__slider-card-title">Katrine</h4>
+                  <button class="pets__card-btn oval-button oval-button_contur">Learn more</button>
+                </article>
+              </li>
+              <li class="pets__slider-item">
+                <article class="pets__slider-card" data-index="5">
+                  <img class="pets__slider-img" src="./assets/img/pets/jennifer.webp" alt="Jennifer">
+                  <h4 class="pets__slider-card-title">Jennifer</h4>
+                  <button class="pets__card-btn oval-button oval-button_contur">Learn more</button>
+                </article>
+              </li>
+              <li class="pets__slider-item">
+                <article class="pets__slider-card" data-index="2">
+                  <img class="pets__slider-img" src="./assets/img/pets/woody.webp" alt="Woody">
+                  <h4 class="pets__slider-card-title">Woody</h4>
+                  <button class="pets__card-btn oval-button oval-button_contur">Learn more</button>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pets__slider-btn-wrapper pets__slider-btn-wrapper_right">
+            <button class="round-btn pets__slider-btn pets__slider-btn_next">
+              <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <a class="pets__link-btn oval-button" href="./pets.html">Get to know the rest</a>
       </div>
     </section>
+
     <section class="help full-width" id="help">
       <div class="container">
 
