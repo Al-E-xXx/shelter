@@ -1,10 +1,6 @@
 @use './../abstracts';
 @use './../base';
 
-.main-page .logo {
-  cursor: default;
-}
-
 .header {
   display: flex;
   justify-content: center;
@@ -104,9 +100,25 @@
     color: var(--color-light-s);
   }
 
+  .logo:hover .logo__title {
+    color: var(--color-light-xl);
+  }
+
+  .logo:hover .logo__header {
+    color: var(--color-primary);
+  }
+
   .pets-page {
     .menu__link:hover {
       color: var(--color-dark-3xl);
+    }
+
+    .logo:hover .logo__title {
+      color: var(--color-dark-3xl);
+    }
+
+    .logo:hover .logo__header {
+      color: var(--color-dark-l);
     }
   }
 }
