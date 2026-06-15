@@ -5,9 +5,89 @@
   display: flex;
   justify-content: center;
 
-  min-height: 350px;
   padding: 40px 0px 0px 0px;
 
   background: url(./../../assets/img/bg/grid.webp), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
 
+  &__container {
+    flex-direction: row;
+    justify-content: space-between;
+    transition: none;
+    -webkit-transition: none;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: space-between;
+    height: 234px;
+    margin: -45px 0px 0px 0px;
+  }
+
+  &__item:nth-child(1) {
+    width: 279px;
+  }
+
+  &__item:nth-child(2) {
+    width: 302px;
+  }
+
+  &__title {
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 1.29;
+    letter-spacing: 0.06em;
+    color: var(--color-light-xl);
+    margin: 0;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+    color: var(--color-primary);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+  }
+
+  &__link-svg {
+    margin-right: 20px;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+  }
+
+  &__item:last-child {
+    aspect-ratio: 30 / 31;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    background-image: url(./../img/footer-puppy.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 0px 0px 0px 0px;
+    transform: translate(1px, 0px);
+  }
+
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer__link:hover {
+    color: var(--color-primary-light);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+  }
+
+  .footer__link:hover .footer__link-svg path {
+    fill: var(--color-primary-light);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+  }
 }
