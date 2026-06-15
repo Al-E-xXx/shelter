@@ -631,8 +631,79 @@ body {
 }
 
 .donation {
+  display: flex;
+  justify-content: center;
   min-height: 462px;
+  padding: 80px 0 100px 0;
   background: var(--color-light-l);
+}
+.donation__content-wrapper {
+  width: 100%;
+  max-width: 915px;
+  margin: 0 auto;
+  display: flex;
+  min-height: 282px;
+  justify-content: space-between;
+}
+.donation__img-wrapper {
+  width: 60%;
+  max-width: 505px;
+  background-image: url(./../img/donation-dog.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-left: 1px;
+}
+.donation__text-wrapper {
+  width: 50%;
+  max-width: 380px;
+}
+.donation__title {
+  margin: 1px 0px 0px 1px;
+  font-family: "Georgia", serif;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 1.28;
+  letter-spacing: 2px;
+  color: var(--color-dark-l);
+}
+.donation__subtitle {
+  font-family: "Georgia", serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.1;
+  letter-spacing: 0.8px;
+  color: var(--color-dark-l);
+  margin: 20px 0px 0px 1px;
+}
+.donation__link-btn {
+  display: inline-flex;
+  margin: 20px 0px 0px 1px;
+  padding: 10px 15px;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  border-radius: 9px;
+  font-family: "Georgia", serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+}
+.donation__link-svg {
+  margin-right: 15px;
+}
+.donation__text {
+  font-family: "Arial", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: -0.1px;
+  color: var(--color-dark-m);
+  margin: 20px 0px 0px 1px;
 }
 
 .footer {
