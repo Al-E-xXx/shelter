@@ -41,6 +41,12 @@
   cursor: pointer;
   transition: var(--transition);
   -webkit-transition: var(--transition);
+
+  &_disabled {
+    cursor: not-allowed;
+    border: 2px solid var(--color-dark-s);
+    color: var(--color-dark-s);
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -52,5 +58,12 @@
   .round-btn:hover {
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
+  }
+
+  .round-btn.round-btn_disabled:hover {
+    cursor: not-allowed;
+    border: 2px solid var(--color-dark-s);
+    color: var(--color-dark-s);
+    background-color: transparent;
   }
 }
