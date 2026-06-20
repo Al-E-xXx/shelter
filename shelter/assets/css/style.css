@@ -181,6 +181,7 @@ body {
 }
 
 .full-width {
+  overflow-x: hidden;
   width: 100%;
 }
 
@@ -364,20 +365,20 @@ body {
 .start-screen {
   display: flex;
   justify-content: center;
-  min-height: 908px;
   background: url(./../../assets/img/bg/grid.webp), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 .start-screen__content-wrapper {
   display: flex;
   justify-content: space-between;
-  gap: 42px;
+  gap: clamp(10px, 10px + (42 - 10) * (100vw - 1100px) / (1280 - 1100), 42px);
   width: 100%;
-  margin-top: 180px;
+  margin-top: clamp(120px, 120px + (180 - 120) * (100vw - 1100px) / (1280 - 1100), 180px);
 }
 .start-screen__text-wrapper {
   width: 100%;
   max-width: 460px;
   margin-top: 163px;
+  margin-top: clamp(30px, 30px + (163 - 30) * (100vw - 1100px) / (1280 - 1100), 163px);
 }
 .start-screen__header {
   font-family: "Georgia";
@@ -407,6 +408,26 @@ body {
   background-repeat: no-repeat;
 }
 
+@media only screen and (max-width: 920px) {
+  .start-screen__content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .start-screen__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .start-screen__header {
+    width: 100%;
+  }
+  .start-screen__puppy {
+    width: 100%;
+    max-width: 569px;
+    margin-top: 89px;
+    transform: translateX(69px);
+  }
+}
 .about {
   display: flex;
   justify-content: center;
