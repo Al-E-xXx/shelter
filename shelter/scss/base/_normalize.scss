@@ -19,6 +19,9 @@
   /*--- Scrollbar for all ---*/
   scrollbar-width: thin; /* thin | auto | none */
   scrollbar-color: rgba(120, 120, 120, 0.4) transparent;
+
+  /*--- For Fonts Render ---*/
+  text-rendering: geometricPrecision;
 }
 
 /*--- Scrollbar for all ---*/
