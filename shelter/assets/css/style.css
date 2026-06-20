@@ -698,6 +698,15 @@ body {
   transform: translate(1px, 0px);
 }
 
+@media only screen and (max-width: 920px) {
+  .help__items-list {
+    gap: 55px 60px;
+  }
+  .help__item {
+    width: 170px;
+    height: 114px;
+  }
+}
 .donation {
   display: flex;
   justify-content: center;
