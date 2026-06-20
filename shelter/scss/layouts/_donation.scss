@@ -17,6 +17,7 @@
     display: flex;
     min-height: 282px;
     justify-content: space-between;
+    gap: 20px;
   }
 
   &__img-wrapper {
@@ -30,8 +31,10 @@
   }
 
   &__text-wrapper {
+    flex-shrink: 0;
     width: 50%;
     max-width: 380px;
+    min-width: 350px;
   }
 
   &__title {
@@ -56,6 +59,7 @@
 
   &__link-btn {
     display: inline-flex;
+    width: 350px;
     margin: 20px 0px 0px 1px;
     padding: 10px 15px;
     text-decoration: none;
@@ -84,5 +88,28 @@
     letter-spacing: 0.01px;
     color: var(--color-dark-m);
     margin: 19px 0px 0px 1px;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .donation {
+    &__content-wrapper {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    &__link-btn {
+      margin: 17px 0px 0px 0px;
+    }
+
+    &__img-wrapper {
+      aspect-ratio: 505 / 282;
+      margin-top: 31px;
+    }
+
+    &__img-wrapper,
+    &__text-wrapper {
+      width: 100%;
+    }
   }
 }
