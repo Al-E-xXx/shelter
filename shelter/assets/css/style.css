@@ -200,6 +200,12 @@ body {
   padding-right: clamp(30px, 30px + (40 - 30) * (100vw - 768px) / (1280 - 768), 40px);
 }
 
+@media only screen and (max-width: 767px) {
+  .container {
+    padding-left: clamp(20px, 20px + (30 - 20) * (100vw - 320px) / (767 - 320), 30px);
+    padding-right: clamp(20px, 20px + (30 - 20) * (100vw - 320px) / (767 - 320), 30px);
+  }
+}
 .oval-button {
   display: inline-flex;
   justify-content: center;
@@ -241,6 +247,31 @@ body {
   cursor: not-allowed;
   border: 2px solid var(--color-dark-s);
   color: var(--color-dark-s);
+}
+
+.mob-menu-btn {
+  position: relative;
+  z-index: 100;
+  width: 30px;
+  height: 22px;
+  border: none;
+  border-top: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+}
+
+.mob-menu-btn::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--color-primary);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -357,6 +388,14 @@ body {
   }
   .pets-page .logo:hover .logo__header {
     color: var(--color-dark-l);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .menu {
+    display: none;
+  }
+  .mob-menu-btn {
+    display: flex;
   }
 }
 .main {
