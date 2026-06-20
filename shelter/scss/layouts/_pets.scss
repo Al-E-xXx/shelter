@@ -55,11 +55,12 @@
   }
 
   &__slider-wrapper {
+    display: flex;
+    justify-content: center;
     margin: 0px;
     padding: 60px 0px 60px 0px;
     overflow: hidden;
-    display: flex;
-    width: calc(3 * (270px + 2 * 45px));
+    width: 100%;
     position: relative;
   }
 
@@ -75,6 +76,12 @@
     z-index: 1;
     background: rgb(246, 246, 246);
     background: linear-gradient(90deg, rgba(246, 246, 246, 1) 0%, rgba(246, 246, 246, 1) 50%, rgba(246, 246, 246, 0) 100%);
+  }
+
+  &__slider-wrapper::after {
+    left: auto;
+    right: 0;
+    background: linear-gradient(90deg, rgba(246, 246, 246, 0) 0%, rgba(246, 246, 246, 1) 50%, rgba(246, 246, 246, 1) 100%);
   }
 
   &__slider {
@@ -146,5 +153,13 @@
   .pets__slider-card:hover .oval-button {
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
+  }
+}
+
+@media only screen and (max-width: 1040px) {
+  .pets {
+    &__slider-item:nth-child(3) {
+      display: none;
+    }
   }
 }

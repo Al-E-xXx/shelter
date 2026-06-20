@@ -11,9 +11,14 @@
   --color-primary: #f1cdb3;
   --color-primary-light: #fddcc4;
   --transition: 0.4s ease;
-  --slider-margin: 45px;
+  --slider-margin: clamp(4px, 4px + (45 - 4) * (100vw - 1040px) / (1280 - 1040), 45px);
 }
 
+@media only screen and (max-width: 1040px) {
+  :root {
+    --slider-margin: clamp(20px, 20px + (85 - 20) * (100vw - 768px) / (1040 - 768), 85px);
+  }
+}
 /*--- Fonts ---*/
 @font-face {
   font-family: "Arial";
@@ -547,11 +552,12 @@ body {
   z-index: 1;
 }
 .pets__slider-wrapper {
+  display: flex;
+  justify-content: center;
   margin: 0px;
   padding: 60px 0px 60px 0px;
   overflow: hidden;
-  display: flex;
-  width: 1080px;
+  width: 100%;
   position: relative;
 }
 .pets__slider-wrapper::before, .pets__slider-wrapper::after {
@@ -565,6 +571,11 @@ body {
   z-index: 1;
   background: rgb(246, 246, 246);
   background: linear-gradient(90deg, rgb(246, 246, 246) 0%, rgb(246, 246, 246) 50%, rgba(246, 246, 246, 0) 100%);
+}
+.pets__slider-wrapper::after {
+  left: auto;
+  right: 0;
+  background: linear-gradient(90deg, rgba(246, 246, 246, 0) 0%, rgb(246, 246, 246) 50%, rgb(246, 246, 246) 100%);
 }
 .pets__slider {
   display: flex;
@@ -628,6 +639,11 @@ body {
   .pets__slider-card:hover .oval-button {
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
+  }
+}
+@media only screen and (max-width: 1040px) {
+  .pets__slider-item:nth-child(3) {
+    display: none;
   }
 }
 .help {
