@@ -789,6 +789,9 @@ body {
 }
 
 @media only screen and (max-width: 860px) {
+  .donation {
+    padding: 80px 0 89px 0;
+  }
   .donation__content-wrapper {
     flex-direction: column-reverse;
     align-items: center;
@@ -897,6 +900,7 @@ body {
 .footer__container {
   flex-direction: row;
   justify-content: space-between;
+  gap: 20px;
   transition: none;
   -webkit-transition: none;
 }
@@ -964,5 +968,17 @@ body {
     fill: var(--color-primary-light);
     transition: var(--transition);
     -webkit-transition: var(--transition);
+  }
+}
+@media only screen and (max-width: 996px) {
+  .footer__container {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 65px;
+    -moz-column-gap: clamp(60px, 60px + (180 - 60) * (100vw - 768px) / (920 - 768), 180px);
+         column-gap: clamp(60px, 60px + (180 - 60) * (100vw - 768px) / (920 - 768), 180px);
+  }
+  .footer__item {
+    margin: -10px 0 0 0;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -12,6 +12,7 @@
   &__container {
     flex-direction: row;
     justify-content: space-between;
+    gap: 20px;
     transition: none;
     -webkit-transition: none;
   }
@@ -89,5 +90,20 @@
     fill: var(--color-primary-light);
     transition: var(--transition);
     -webkit-transition: var(--transition);
+  }
+}
+
+@media only screen and (max-width: 996px) {
+  .footer {
+    &__container {
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 65px;
+      column-gap: abstracts.fluid-clamp(60, 180, 768, 920);
+    }
+
+    &__item {
+      margin: -10px 0 0 0;
+    }
   }
 }
