@@ -60,3 +60,28 @@
     transform: translate(0px, -1px);
   }
 }
+
+@media only screen and (max-width: 920px) {
+  .about {
+    &__container {
+      flex-direction: column-reverse;
+    }
+
+    &__item {
+      width: 100%;
+      max-width: abstracts.fluid-clamp(430, 600, 768, 920);;
+    }
+
+    &__item:first-child {
+      align-items: center;
+    }
+
+    &__item:last-child {
+      transform: translate(0px, 0px);
+    }
+    .about__img {
+      margin-right: 0;
+      margin-top: 77px;
+    }
+  }
+}

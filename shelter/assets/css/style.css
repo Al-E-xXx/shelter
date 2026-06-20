@@ -480,6 +480,25 @@ body {
   transform: translate(0px, -1px);
 }
 
+@media only screen and (max-width: 920px) {
+  .about__container {
+    flex-direction: column-reverse;
+  }
+  .about__item {
+    width: 100%;
+    max-width: clamp(430px, 430px + (600 - 430) * (100vw - 768px) / (920 - 768), 600px);
+  }
+  .about__item:first-child {
+    align-items: center;
+  }
+  .about__item:last-child {
+    transform: translate(0px, 0px);
+  }
+  .about .about__img {
+    margin-right: 0;
+    margin-top: 77px;
+  }
+}
 .pets {
   display: flex;
   justify-content: center;
