@@ -110,3 +110,33 @@
     }
   }
 }
+
+@media only screen and (max-width: 634px) {
+  .our-friends {
+    &__container {
+      padding-top: abstracts.fluid-clamp(42, 80, 380, 634);
+      padding-left: abstracts.fluid-clamp(10, 20, 380, 634);
+      padding-right: abstracts.fluid-clamp(10, 20, 380, 634);
+      padding-bottom: abstracts.fluid-clamp(42, 76, 380, 634);
+    }
+
+    &__title {
+      font-size: abstracts.fluid-clamp(25, 35, 380, 634);;
+    }
+
+    &__cards-wrapper {
+      margin-top: 26px;
+    }
+
+    &__card:nth-child(4),
+    &__card:nth-child(5),
+    &__card:nth-child(6) {
+      display: none;
+    }
+
+    &__buttons-wrapper {
+      margin-top: 28px;
+      gap: abstracts.fluid-clamp(10, 20, 380, 634);
+    }
+  }
+}

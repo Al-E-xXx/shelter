@@ -279,6 +279,14 @@ body {
   background-color: var(--color-primary);
 }
 
+.pets-page .mob-menu-btn {
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+}
+.pets-page .mob-menu-btn::before {
+  background-color: #000000;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .oval-button:hover {
     background-color: var(--color-primary-light);
@@ -1105,6 +1113,27 @@ body {
   }
   .our-friends__card:nth-child(7), .our-friends__card:nth-child(8) {
     display: none;
+  }
+}
+@media only screen and (max-width: 634px) {
+  .our-friends__container {
+    padding-top: clamp(42px, 42px + (80 - 42) * (100vw - 380px) / (634 - 380), 80px);
+    padding-left: clamp(10px, 10px + (20 - 10) * (100vw - 380px) / (634 - 380), 20px);
+    padding-right: clamp(10px, 10px + (20 - 10) * (100vw - 380px) / (634 - 380), 20px);
+    padding-bottom: clamp(42px, 42px + (76 - 42) * (100vw - 380px) / (634 - 380), 76px);
+  }
+  .our-friends__title {
+    font-size: clamp(25px, 25px + (35 - 25) * (100vw - 380px) / (634 - 380), 35px);
+  }
+  .our-friends__cards-wrapper {
+    margin-top: 26px;
+  }
+  .our-friends__card:nth-child(4), .our-friends__card:nth-child(5), .our-friends__card:nth-child(6) {
+    display: none;
+  }
+  .our-friends__buttons-wrapper {
+    margin-top: 28px;
+    gap: clamp(10px, 10px + (20 - 10) * (100vw - 380px) / (634 - 380), 20px);
   }
 }
 .footer {
