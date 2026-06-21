@@ -1189,4 +1189,45 @@ body {
   .footer__item {
     margin: -10px 0 0 0;
   }
+}
+@media only screen and (max-width: 767px) {
+  .footer__container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .footer__title {
+    font-size: clamp(25px, 25px + (35 - 25) * (100vw - 380px) / (767 - 380), 35px);
+  }
+}
+@media only screen and (max-width: 550px) {
+  .footer__container {
+    row-gap: clamp(51px, 51px + (65 - 51) * (100vw - 380px) / (550 - 380), 65px);
+  }
+  .footer__item:nth-child(1) {
+    width: 281px;
+    height: clamp(208px, 208px + (234 - 208) * (100vw - 380px) / (550 - 380), 234px);
+  }
+  .footer__item:nth-child(2) {
+    height: clamp(220px, 220px + (234 - 220) * (100vw - 380px) / (550 - 380), 234px);
+  }
+  .footer__item:nth-child(2) .footer__title {
+    max-width: 294px;
+    transform: translate(4px, 0px);
+  }
+  .footer__link_map1 {
+    transform: translate(-3px, 0px);
+  }
+  .footer__link_map2 {
+    justify-content: flex-start !important;
+  }
+  .footer__title {
+    text-align: center;
+  }
+  .footer__link {
+    justify-content: center;
+  }
+  .footer__item_img {
+    max-width: clamp(260px, 260px + (300 - 260) * (100vw - 380px) / (550 - 380), 300px) !important;
+    margin-top: -10px !important;
+  }
 }/*# sourceMappingURL=style.css.map */
