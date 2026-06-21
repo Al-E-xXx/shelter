@@ -115,3 +115,58 @@
     }
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .donation {
+    padding-top: abstracts.fluid-clamp(42, 80, 380, 767);
+    padding-bottom: abstracts.fluid-clamp(36, 89, 380, 767);
+
+    &__title {
+      font-size: abstracts.fluid-clamp(25, 35, 380, 767);
+      letter-spacing: 0.06em;
+    }
+
+    &__subtitle {
+      letter-spacing: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .donation {
+    &__text-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: auto;
+    }
+
+    &__content-wrapper {
+      gap: 6px;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__subtitle {
+      margin: 24px 0px 0px -1px;
+    }
+
+    &__text {
+      text-align: justify;
+    }
+
+    &__link-btn {
+      font-size: abstracts.fluid-clamp(15, 20, 380, 550);
+      width: auto;
+      min-width: 281px;
+      margin: 22px 0px 0px -1px;
+      align-items: center;
+    }
+
+    &__img-wrapper {
+      width: 94%;
+    }
+  }
+}
