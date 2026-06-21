@@ -49,6 +49,42 @@
   }
 }
 
+.mob-menu-btn {
+  position: relative;
+  z-index: 100;
+  width: 30px;
+  height: 22px;
+  border: none;
+  border-top: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+}
+
+.mob-menu-btn::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+.pets-page {
+  .mob-menu-btn {
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+  }
+
+  .mob-menu-btn::before {
+    background-color: #000000;
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .oval-button:hover {
     background-color: var(--color-primary-light);
