@@ -25,3 +25,9 @@ $bg-light: #ffffff;
 		--slider-margin: #{functions.fluid-clamp(20, 85, 768, 1040)};
 	}
 }
+
+@media only screen and (max-width: 767px) {
+	:root {
+		--slider-margin: #{functions.fluid-clamp(5, 20, 730, 767)};
+	}
+}

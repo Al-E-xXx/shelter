@@ -19,6 +19,11 @@
     --slider-margin: clamp(20px, 20px + (85 - 20) * (100vw - 768px) / (1040 - 768), 85px);
   }
 }
+@media only screen and (max-width: 767px) {
+  :root {
+    --slider-margin: clamp(5px, 5px + (20 - 5) * (100vw - 730px) / (767 - 730), 20px);
+  }
+}
 /*--- Fonts ---*/
 @font-face {
   font-family: "Arial";
@@ -568,6 +573,7 @@ body {
     padding-left: 25px;
     padding-right: 25px;
     padding-top: clamp(41px, 41px + (80 - 41) * (100vw - 380px) / (767 - 380), 80px);
+    padding-bottom: clamp(44px, 44px + (100 - 44) * (100vw - 380px) / (767 - 380), 100px);
   }
   .about__title {
     font-size: clamp(25px, 25px + (35 - 25) * (100vw - 380px) / (767 - 380), 35px);
@@ -646,18 +652,6 @@ body {
   width: 100%;
   position: relative;
 }
-.pets__slider-wrapper::before, .pets__slider-wrapper::after {
-  content: "";
-  display: block;
-  width: 20px;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  background: rgb(246, 246, 246);
-  background: linear-gradient(90deg, rgb(246, 246, 246) 0%, rgb(246, 246, 246) 50%, rgba(246, 246, 246, 0) 100%);
-}
 .pets__slider-wrapper::after {
   left: auto;
   right: 0;
@@ -730,6 +724,54 @@ body {
 @media only screen and (max-width: 1040px) {
   .pets__slider-item:nth-child(3) {
     display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .pets__container {
+    padding-left: clamp(10px, 10px + (30 - 10) * (100vw - 380px) / (767 - 380), 30px);
+    padding-right: clamp(10px, 10px + (30 - 10) * (100vw - 380px) / (767 - 380), 30px);
+  }
+  .pets__title {
+    margin-top: clamp(41px, 41px + (80 - 41) * (100vw - 380px) / (767 - 380), 80px);
+    margin-right: 3px;
+    font-size: clamp(25px, 25px + (35 - 25) * (100vw - 380px) / (767 - 380), 35px);
+    letter-spacing: 0.06em;
+    line-height: 1.28;
+  }
+  .pets__slider-wrapper {
+    padding-top: clamp(42px, 42px + (60 - 42) * (100vw - 380px) / (767 - 380), 60px);
+    padding-bottom: clamp(20px, 20px + (60 - 20) * (100vw - 380px) / (767 - 380), 60px);
+  }
+}
+@media only screen and (max-width: 730px) {
+  .pets__slider-item:nth-child(2) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .pets {
+    min-height: auto;
+  }
+  .pets__container {
+    padding-bottom: 42px;
+  }
+  .pets__slider-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    -moz-column-gap: 80px;
+         column-gap: 80px;
+  }
+  .pets__slider-wrapper {
+    order: 0;
+  }
+  .pets__slider-btn-wrapper_left {
+    order: 1;
+  }
+  .pets__slider-btn-wrapper_right {
+    order: 2;
+  }
+  .pets__link-btn {
+    margin-top: 42px;
   }
 }
 .help {

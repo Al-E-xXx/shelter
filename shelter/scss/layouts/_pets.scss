@@ -64,19 +64,19 @@
     position: relative;
   }
 
-  &__slider-wrapper::before,
-  &__slider-wrapper::after {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    background: rgb(246, 246, 246);
-    background: linear-gradient(90deg, rgba(246, 246, 246, 1) 0%, rgba(246, 246, 246, 1) 50%, rgba(246, 246, 246, 0) 100%);
-  }
+  // &__slider-wrapper::before,
+  // &__slider-wrapper::after {
+  //   content: '';
+  //   display: block;
+  //   width: 20px;
+  //   height: 100%;
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   z-index: 1;
+  //   background: rgb(246, 246, 246);
+  //   background: linear-gradient(90deg, rgba(246, 246, 246, 1) 0%, rgba(246, 246, 246, 1) 50%, rgba(246, 246, 246, 0) 100%);
+  // }
 
   &__slider-wrapper::after {
     left: auto;
@@ -160,6 +160,67 @@
   .pets {
     &__slider-item:nth-child(3) {
       display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .pets {
+    &__container {
+      padding-left: abstracts.fluid-clamp(10, 30, 380, 767);
+      padding-right: abstracts.fluid-clamp(10, 30, 380, 767);
+    }
+
+    &__title {
+      margin-top: abstracts.fluid-clamp(41, 80, 380, 767);
+      margin-right: 3px;
+      font-size: abstracts.fluid-clamp(25, 35, 380, 767);
+      letter-spacing: 0.06em;
+      line-height: 1.28;
+    }
+
+    &__slider-wrapper {
+      padding-top: abstracts.fluid-clamp(42, 60, 380, 767);
+      padding-bottom: abstracts.fluid-clamp(20, 60, 380, 767);
+    }
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .pets {
+    &__slider-item:nth-child(2) {
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 440px) {
+  .pets {
+    min-height: auto;
+
+    &__container {
+      padding-bottom: 42px;
+    }
+
+    &__slider-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 80px;
+    }
+
+    &__slider-wrapper {
+      order: 0;
+    }
+
+    &__slider-btn-wrapper_left {
+      order: 1;
+    }
+
+    &__slider-btn-wrapper_right {
+      order: 2;
+    }
+
+    &__link-btn {
+      margin-top: 42px;
     }
   }
 }
