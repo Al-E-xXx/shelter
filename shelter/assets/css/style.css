@@ -1039,7 +1039,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 45px 0px 0px 0px;
+  margin-top: clamp(15px, 15px + (45 - 15) * (100vw - 768px) / (1280 - 768), 45px);
   gap: 30px 40px;
   padding: 14px 0px 14px 0px;
 }
@@ -1079,7 +1079,7 @@ body {
 .our-friends__buttons-wrapper {
   display: flex;
   justify-content: center;
-  margin: 45px 0px 0px 0px;
+  margin-top: clamp(26px, 26px + (45 - 26) * (100vw - 768px) / (1280 - 768), 45px);
   gap: 20px;
 }
 .our-friends__btn_counter {
@@ -1097,6 +1097,14 @@ body {
   .our-friends__card:hover .oval-button {
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .our-friends__container {
+    padding-bottom: clamp(76px, 76px + (100 - 76) * (100vw - 768px) / (1280 - 768), 100px);
+  }
+  .our-friends__card:nth-child(7), .our-friends__card:nth-child(8) {
+    display: none;
   }
 }
 .footer {
