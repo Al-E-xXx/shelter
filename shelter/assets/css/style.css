@@ -472,6 +472,26 @@ body {
     transform: translateX(69px);
   }
 }
+@media only screen and (max-width: 767px) {
+  .start-screen__container {
+    padding-left: clamp(10px, 10px + (20 - 10) * (100vw - 380px) / (767 - 380), 20px);
+    padding-right: clamp(10px, 10px + (20 - 10) * (100vw - 380px) / (767 - 380), 20px);
+  }
+  .start-screen__header {
+    font-size: clamp(25px, 25px + (44 - 25) * (100vw - 380px) / (767 - 380), 44px);
+    letter-spacing: 0.06em;
+  }
+  .start-screen__puppy {
+    transform: translateX(clamp(19px, 19px + (69 - 19) * (100vw - 320px) / (767 - 320), 69px));
+    max-width: clamp(261px, 261px + (569 - 261) * (100vw - 320px) / (767 - 320), 569px);
+    margin-top: 94px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .start-screen__header, .start-screen__text {
+    text-align: center;
+  }
+}
 .about {
   display: flex;
   justify-content: center;

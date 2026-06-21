@@ -28,6 +28,6 @@ body {
 @media only screen and (max-width: 767px) {
   .container {
     padding-left: abstracts.fluid-clamp(20, 30, 320, 767);
-  padding-right: abstracts.fluid-clamp(20, 30, 320, 767);
+    padding-right: abstracts.fluid-clamp(20, 30, 320, 767);
   }
 }
