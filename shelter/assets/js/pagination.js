@@ -45,9 +45,6 @@ export function initPagination() {
     const response = await fetch('./assets/json/pets.json');
     pets = await response.json();
 
-    console.log('indexesArray48Shuffle:');
-    console.log(indexesArray48Shuffle);
-
     buildCards(indexesArray48Shuffle, showFromId, 'none');
   }
 
