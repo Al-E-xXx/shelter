@@ -82,6 +82,8 @@
 
   .mob-menu-btn::before {
     background-color: #000000;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
   }
 }
 

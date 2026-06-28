@@ -36,61 +36,12 @@
       <div class="our-friends__container container">
         <h2 class="our-friends__title">Our friends who<br>are looking for a house</h2>
 
-        <div class="our-friends__cards-wrapper">
-          <article class="our-friends__card" data-index="4">
-            <img class="our-friends__img" src="./assets/img/pets/katrine.png" alt="Katrine">
-            <h3 class="our-friends__card-title">Katrine</h3>
-            <button class="our-friends__card-btn oval-button oval-button_contur">Learn more</button>
-          </article>
-
-          <article class="our-friends__card" data-index="0">
-            <img class="our-friends__img" src="./assets/img/pets/jennifer.png" alt="Jennifer">
-            <h3 class="our-friends__card-title">Jennifer</h3>
-            <button class="our-friends__card-btn oval-button oval-button_contur">Learn more</button>
-          </article>
-
-          <article class="our-friends__card" data-index="2">
-            <img class="our-friends__img" src="./assets/img/pets/woody.png" alt="Woody">
-            <h3 class="our-friends__card-title">Woody</h3>
-            <button class="our-friends__card-btn oval-button oval-button_contur">Learn more</button>
-          </article>
-
-          <article class="our-friends__card" data-index="1">
-            <img class="our-friends__img" src="./assets/img/pets/sophia.png" alt="Sophia">
-            <h3 class="our-friends__card-title">Sophia</h3>
-            <button class="our-friends__card-btn oval-button oval-button_contur">Learn more</button>
-          </article>
-
-          <article class="our-friends__card" data-index="5">
-            <img class="our-friends__img" src="./assets/img/pets/timmy.png" alt="Timmy">
-            <h3 class="our-friends__card-title">Timmy</h3>
-            <button class="our-friends__card-btn oval-button oval-button_contur">Learn more</button>
-          </article>
-
-          <article class="our-friends__card" data-index="7">
-            <img class="our-friends__img" src="./assets/img/pets/charly.png" alt="Charly">
-            <h3 class="our-friends__card-title">Charly</h3>
-            <button class="our-friends__card-btn oval-button oval-button_contur">Learn more</button>
-          </article>
-
-          <article class="our-friends__card" data-index="3">
-            <img class="our-friends__img" src="./assets/img/pets/scarlett.png" alt="Scarlett">
-            <h3 class="our-friends__card-title">Scarlett</h3>
-            <button class="our-friends__card-btn oval-button oval-button_contur">Learn more</button>
-          </article>
-
-          <article class="our-friends__card" data-index="6">
-            <img class="our-friends__img" src="./assets/img/pets/freddie.png" alt="Freddie">
-            <h3 class="our-friends__card-title">Freddie</h3>
-            <button class="our-friends__card-btn oval-button oval-button_contur">Learn more</button>
-          </article>
-        </div>
+        <div class="our-friends__cards-wrapper"></div>
 
         <div class="our-friends__buttons-wrapper">
-          <button class="round-btn round-btn_disabled our-friends__btn our-friends__btn_disabled" id="to-begining-btn"
+          <button class="round-btn round-btn_disabled our-friends__btn" id="to-begining-btn"
             disabled="">&lt;&lt;</button>
-          <button class="round-btn round-btn_disabled our-friends__btn our-friends__btn_disabled" id="prev-btn"
-            disabled="">&lt;</button>
+          <button class="round-btn round-btn_disabled our-friends__btn" id="prev-btn" disabled="">&lt;</button>
           <span class="round-btn our-friends__btn our-friends__btn_counter">1</span>
           <button class="round-btn our-friends__btn" id="next-btn">&gt;</button>
           <button class="round-btn our-friends__btn" id="to-end-btn">&gt;&gt;</button>
@@ -170,7 +121,40 @@
       <div class="footer__item  footer__item_img"></div>
     </div>
   </footer>
-  <script src="./assets/js/index.js"></script>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Popup -->
+  <div class="popup-wrapper">
+    <div class="popup">
+      <button class="round-btn popup__close">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M7.42618 6.00003L11.7046 1.72158C12.0985 1.32775 12.0985 0.689213 11.7046 0.295433C11.3108 -0.0984027 10.6723 -0.0984027 10.2785 0.295433L5.99998 4.57394L1.72148 0.295377C1.32765 -0.098459 0.68917 -0.098459 0.295334 0.295377C-0.0984448 0.689213 -0.0984448 1.32775 0.295334 1.72153L4.57383 5.99997L0.295334 10.2785C-0.0984448 10.6723 -0.0984448 11.3108 0.295334 11.7046C0.68917 12.0985 1.32765 12.0985 1.72148 11.7046L5.99998 7.42612L10.2785 11.7046C10.6723 12.0985 11.3108 12.0985 11.7046 11.7046C12.0985 11.3108 12.0985 10.6723 11.7046 10.2785L7.42618 6.00003Z"
+            fill="#292929"></path>
+        </svg>
+      </button>
+      <div class="popup__img-wrapper"><img class="popup__img" src="./assets/img/pets/freddie.webp" alt="Freddie">
+      </div>
+      <div class="popup__content-wrapper">
+        <h3 class="popup__title">Freddie</h3>
+        <h4 class="popup__subtitle">Cat - British Shorthair</h4>
+        <p class="popup__description">Freddie is a little shy at first, but very sweet when he warms up. He likes
+          playing
+          with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has
+          bounced around a lot in his life, and is looking to find his forever home.</p>
+        <ul class="popup__list">
+          <li class="popup__list-item"><span>Age:</span> 2 months</li>
+          <li class="popup__list-item"><span>Inoculations:</span> rabies</li>
+          <li class="popup__list-item"><span>Diseases:</span> none</li>
+          <li class="popup__list-item"><span>Parasites:</span> none</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/index.js" type="module"></script>
 </body>
 
 </html>

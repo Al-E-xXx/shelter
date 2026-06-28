@@ -17,17 +17,29 @@ $bg-light: #ffffff;
 	--color-primary-light: #fddcc4;
 
 	--transition: 0.4s ease;
-	--slider-margin: #{functions.fluid-clamp(4, 45, 1040, 1280)};
+	--slider-margin: #{functions.fluid-clamp(9, 48, 1041, 1280)};
 }
 
 @media only screen and (max-width: 1040px) {
 	:root {
-		--slider-margin: #{functions.fluid-clamp(20, 85, 768, 1040)};
+		--slider-margin: #{functions.fluid-clamp(16, 82, 768, 1041)};
 	}
 }
 
 @media only screen and (max-width: 767px) {
 	:root {
-		--slider-margin: #{functions.fluid-clamp(5, 20, 730, 767)};
+		--slider-margin: #{functions.fluid-clamp(5, 16, 730, 767)};
+	}
+}
+
+@media only screen and (max-width: 730px) {
+	:root {
+		--slider-margin: #{functions.fluid-clamp(20, 150, 441, 730)};
+	}
+}
+
+@media only screen and (max-width: 440px) {
+	:root {
+		--slider-margin: #{functions.fluid-clamp(15, 72, 320, 440)};
 	}
 }
