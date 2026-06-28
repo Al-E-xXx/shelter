@@ -9,6 +9,11 @@ body {
   min-height: 100dvh;
 }
 
+.fixed-block {
+  position: fixed;
+  overflow: hidden;
+}
+
 .full-width {
   overflow-x: hidden;
   width: 100%;
@@ -23,6 +28,40 @@ body {
   max-width: 1280px;
   padding-left: abstracts.fluid-clamp(30, 40, 768, 1280);
   padding-right: abstracts.fluid-clamp(30, 40, 768, 1280);
+}
+
+/*--- Overlay ---*/
+.overlay {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.fade-out {
+  animation-name: fade-out;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.overlay_active {
+  opacity: 1;
+  transform: translateX(0%);
 }
 
 @media only screen and (max-width: 767px) {

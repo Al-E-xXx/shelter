@@ -94,6 +94,22 @@
 
 }
 
+.overlay {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+  opacity: 0;
+  transform: translateX(-100%);
+
+  &_active {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 
 @media (hover: hover) and (pointer: fine) {
   .menu__link:hover {
@@ -125,10 +141,52 @@
 
 @media only screen and (max-width: 767px) {
   .menu {
-    display: none;
+    justify-content: center;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100dvh;
+    background-color: #292929;
+    transform: translateX(100%);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+
+    &__list {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    &__link {
+      font-size: 32px;
+      line-height: 155%;
+      color: var(--color-dark-s) !important;
+    }
+
+    &_active {
+      transform: translateX(0);
+    }
+
+    &__link_active {
+      color: var(--color-light-s) !important;
+      border-bottom: 3px solid var(--color-primary);
+    }
   }
+
 
   .mob-menu-btn {
     display: flex;
+
+    &_active {
+      transform: rotate(90deg);
+      border-top: 2px solid var(--color-primary) !important;
+      border-bottom: 2px solid var(--color-primary) !important;
+    }
+
+    &_active::before {
+      background-color: var(--color-primary) !important;
+    }
   }
 }
