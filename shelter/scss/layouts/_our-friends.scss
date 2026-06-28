@@ -31,6 +31,9 @@
     margin-top: abstracts.fluid-clamp(15, 45, 768, 1280);
     gap: 30px 40px;
     padding: 14px 0px 14px 0px;
+    overflow: hidden;
+    position: relative;
+    will-change: transform, opacity;
   }
 
   &__card {
@@ -81,6 +84,23 @@
     pointer-events: none;
   }
 }
+
+.slide-out-left {
+  animation: slideOutLeft cubic-bezier(0.455, 0.03, 0.515, 0.955) ease-in-out forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight 400ms ease-in-out forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 400ms ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 400ms ease-out forwards;
+}
+
 
 @media (hover: hover) and (pointer: fine) {
   .our-friends__card:hover {

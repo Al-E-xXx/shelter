@@ -25,7 +25,10 @@ export function initPagination() {
   let showFromId = 0;
   let pets = {};
 
-  // Произвольный префикс для LocalStorage
+  let isAnimating = false;
+
+  const ANIMATION_DURATION = 400;
+
   const LS_PREFIX = 'pets_app_';
   const LS_KEY = `${LS_PREFIX}indexesArray48Shuffle`;
 
@@ -45,7 +48,7 @@ export function initPagination() {
     console.log('indexesArray48Shuffle:');
     console.log(indexesArray48Shuffle);
 
-    buildCards(indexesArray48Shuffle, showFromId);
+    buildCards(indexesArray48Shuffle, showFromId, 'none');
   }
 
   if (winWidth > 1024) {
@@ -80,8 +83,12 @@ export function initPagination() {
     }
   }
 
-  const buildCards = (arr, fromId) => {
-    ourFriendsCardsWrapperEl.innerHTML = '';
+  const buildCards = (arr, fromId, direction = 'none') => {
+    const existingCards = ourFriendsCardsWrapperEl.querySelectorAll('.our-friends__card');
+
+    pagesCounter = Math.ceil(fromId / cardsInPage + 1);
+
+    const newCardsFragment = document.createDocumentFragment();
 
     for (let i = 0; i < cardsInPage; i++) {
       const articleElement = document.createElement('article');
@@ -104,23 +111,56 @@ export function initPagination() {
       articleElement.append(imgElement);
       articleElement.append(h4Element);
       articleElement.append(btnElement);
-      ourFriendsCardsWrapperEl.append(articleElement);
+      newCardsFragment.append(articleElement);
     }
 
-    pagesCounter = Math.ceil(fromId / cardsInPage + 1);
-    pageCounterEl.textContent = pagesCounter;
+    const renderNewCards = () => {
+      ourFriendsCardsWrapperEl.innerHTML = '';
+      ourFriendsCardsWrapperEl.append(newCardsFragment);
 
+      if (direction !== 'none') {
+        const enterClass = direction === 'left' ? 'slide-in-left' : 'slide-in-right';
+        const cards = ourFriendsCardsWrapperEl.querySelectorAll('.our-friends__card');
+        cards.forEach(card => card.classList.add(enterClass));
+      }
+    };
+
+    const updatePageCounter = () => {
+      pageCounterEl.textContent = pagesCounter;
+    };
+
+    if (existingCards.length > 0 && direction !== 'none') {
+      const exitClass = direction === 'left' ? 'slide-out-left' : 'slide-out-right';
+      existingCards.forEach(card => card.classList.add(exitClass));
+
+      setTimeout(() => {
+        renderNewCards();
+        updatePageCounter();
+
+        setTimeout(() => {
+          isAnimating = false;
+          updateButtonsState();
+        }, ANIMATION_DURATION);
+      }, ANIMATION_DURATION);
+    } else {
+
+      renderNewCards();
+      updatePageCounter();
+      isAnimating = false;
+      updateButtonsState();
+    }
+  }
+
+  const updateButtonsState = () => {
     // Disable/Enable paginations buttons
     if (pagesCounter === 1) {
       toBeginingBtn.disabled = true;
       prevBtn.disabled = true;
-
       toBeginingBtn.classList.add('round-btn_disabled');
       prevBtn.classList.add('round-btn_disabled');
     } else {
       toBeginingBtn.disabled = false;
       prevBtn.disabled = false;
-
       toBeginingBtn.classList.remove('round-btn_disabled');
       prevBtn.classList.remove('round-btn_disabled');
     }
@@ -128,52 +168,56 @@ export function initPagination() {
     if (pagesCounter * cardsInPage >= indexesArray48Shuffle.length) {
       nextBtn.disabled = true;
       nextBtn.classList.add('round-btn_disabled');
-
       toEndBtn.disabled = true;
       toEndBtn.classList.add('round-btn_disabled');
     } else {
       nextBtn.disabled = false;
       nextBtn.classList.remove('round-btn_disabled');
-
       toEndBtn.disabled = false;
       toEndBtn.classList.remove('round-btn_disabled');
     }
   }
 
   const nextPage = () => {
+    if (isAnimating) return;
     if (showFromId + cardsInPage < indexesArray48Shuffle.length) {
+      isAnimating = true;
       showFromId += cardsInPage;
-      buildCards(indexesArray48Shuffle, showFromId);
-    } else {
-      return;
+      buildCards(indexesArray48Shuffle, showFromId, 'left');
     }
   }
 
   const toTheEnd = () => {
+    if (isAnimating) return;
+    isAnimating = true;
     showFromId = indexesArray48Shuffle.length - cardsInPage;
-    buildCards(indexesArray48Shuffle, showFromId);
+    buildCards(indexesArray48Shuffle, showFromId, 'left');
   }
 
   const prevPage = () => {
+    if (isAnimating) return;
+    isAnimating = true;
     if (showFromId - cardsInPage >= 0) {
       showFromId -= cardsInPage;
     } else {
       showFromId = 0;
     }
-
-    buildCards(indexesArray48Shuffle, showFromId);
+    buildCards(indexesArray48Shuffle, showFromId, 'right');
   }
 
   const toTheBegining = () => {
+    if (isAnimating) return;
+    isAnimating = true;
     showFromId = 0;
-    buildCards(indexesArray48Shuffle, showFromId);
+    buildCards(indexesArray48Shuffle, showFromId, 'right');
   }
 
   const checkId = () => {
     if (showFromId + cardsInPage > indexesArray48Shuffle.length) {
       showFromId = indexesArray48Shuffle.length - cardsInPage;
     }
-    buildCards(indexesArray48Shuffle, showFromId);
+    // При ресайзе анимация не нужна
+    buildCards(indexesArray48Shuffle, showFromId, 'none');
   }
 
   const widthToggleTablet = (mediaQuery) => {
@@ -220,20 +264,16 @@ export function initPagination() {
     try {
       const parsedArray = JSON.parse(storedArray);
       if (Array.isArray(parsedArray) && parsedArray.length > 0) {
-        // Если массив успешно прочитан и не пустой - используем его
         indexesArray48Shuffle = parsedArray;
       } else {
-        // Если пустой массив - генерируем новый
         build48Array();
         localStorage.setItem(LS_KEY, JSON.stringify(indexesArray48Shuffle));
       }
     } catch (e) {
-      // Если в LocalStorage невалидный JSON, пересоздаем и сохраняем
       build48Array();
       localStorage.setItem(LS_KEY, JSON.stringify(indexesArray48Shuffle));
     }
   } else {
-    // Если ключа в LS нет, генерируем и сохраняем
     build48Array();
     localStorage.setItem(LS_KEY, JSON.stringify(indexesArray48Shuffle));
   }
