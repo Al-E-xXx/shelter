@@ -1,4 +1,4 @@
-import { winWidth, overlayEl, bodyEl, currentScrollTop } from './common.js';
+import { winWidth, bodyEl } from './common.js';
 
 export function initSlider() {
   const bodyEl = document.querySelector('body');
@@ -21,7 +21,7 @@ export function initSlider() {
   let visibleSlidesArray  = [];
   let prevArrayLeft = [];
   let prevArrayRight = [];
-  let pets = new Object();
+  let pets = {};
 
   slider.innerHTML = '';
 

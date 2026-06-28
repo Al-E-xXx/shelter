@@ -101,13 +101,6 @@
     &__container {
       padding-bottom: abstracts.fluid-clamp(76, 100, 768, 1280);
     }
-
-
-
-    &__card:nth-child(7),
-    &__card:nth-child(8) {
-      display: none;
-    }
   }
 }
 
@@ -126,12 +119,6 @@
 
     &__cards-wrapper {
       margin-top: 26px;
-    }
-
-    &__card:nth-child(4),
-    &__card:nth-child(5),
-    &__card:nth-child(6) {
-      display: none;
     }
 
     &__buttons-wrapper {
