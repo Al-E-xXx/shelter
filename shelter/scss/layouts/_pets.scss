@@ -1,0 +1,207 @@
+@use './../abstracts';
+@use './../base';
+
+.pets {
+  display: flex;
+  justify-content: center;
+
+  min-height: 877px;
+  background: var(--color-light-l);
+
+  &__title {
+    font-family: "Georgia";
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 1.29;
+    letter-spacing: 2.1px;
+    text-align: center;
+    color: var(--color-dark-l);
+    margin: 80px 0px 0px 0px;
+    padding: 0px;
+    transform: translate(2px, 1px);
+  }
+
+  &__slider-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 435px;
+    margin: 0px;
+    overflow: hidden;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+  }
+
+  &__slider-btn-wrapper {
+    display: flex;
+    align-items: center;
+    width: auto;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  &__slider-btn-wrapper_left::before,
+  &__slider-btn-wrapper_right::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(246, 246, 246);
+    background: linear-gradient(90deg, rgba(246, 246, 246, 1) 0%, rgba(246, 246, 246, 1) 50%, rgba(246, 246, 246, 0) 100%);
+    z-index: 1;
+  }
+
+  &__slider-wrapper {
+    display: flex;
+    margin: 0px;
+    padding: 60px 0px 60px 0px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  &__slider {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    height: 435px;
+  }
+
+  &__slider-item {
+    width: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: var(--slider-margin);
+    margin-right: var(--slider-margin);
+    flex-shrink: 0;
+  }
+
+  &__slider-card {
+    width: 270px;
+    height: 100%;
+    border-radius: 9px;
+    overflow: hidden;
+    background-color: var(--color-light-s);
+    cursor: pointer;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+  }
+
+  &__slider-img {
+    display: block;
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+  }
+
+  &__slider-card-title {
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+    padding: 0px;
+    margin: 30px 0px 0px 2px;
+    text-align: center;
+  }
+
+  &__card-btn {
+    display: flex;
+    margin: 31px auto 0px auto;
+  }
+
+  &__slider_shift-left {
+    animation-name: slide-left;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &__slider_shift-right {
+    animation-name: slide-right;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+.pets-page .pets {
+  min-height: 1342px;
+
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pets__slider-card:hover {
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-light-xl);
+    box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
+
+  .pets__slider-card:hover .oval-button {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .pets {
+    &__container {
+      padding-left: abstracts.fluid-clamp(10, 30, 380, 767);
+      padding-right: abstracts.fluid-clamp(10, 30, 380, 767);
+    }
+
+    &__title {
+      margin-top: abstracts.fluid-clamp(41, 80, 380, 767);
+      margin-right: 3px;
+      font-size: abstracts.fluid-clamp(25, 35, 380, 767);
+      letter-spacing: 0.06em;
+      line-height: 1.28;
+    }
+
+    &__slider-wrapper {
+      padding-top: abstracts.fluid-clamp(42, 60, 380, 767);
+      padding-bottom: abstracts.fluid-clamp(20, 60, 380, 767);
+    }
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .pets {
+    min-height: auto;
+
+    &__container {
+      padding-bottom: 42px;
+    }
+
+    &__slider-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 80px;
+    }
+
+    &__slider-wrapper {
+      order: 0;
+    }
+
+    &__slider-btn-wrapper_left {
+      order: 1;
+    }
+
+    &__slider-btn-wrapper_right {
+      order: 2;
+    }
+
+    &__link-btn {
+      margin-top: 42px;
+    }
+  }
+}

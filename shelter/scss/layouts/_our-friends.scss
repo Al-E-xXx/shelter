@@ -1,0 +1,149 @@
+@use './../abstracts';
+@use './../base';
+
+.our-friends {
+  display: flex;
+  justify-content: center;
+
+  min-height: 1342px;
+  background-color: var(--color-light-l);
+
+  &__container {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
+  &__title {
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 129%;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin: 1px 0px 0px 3px;
+    text-align: center;
+  }
+
+  &__cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: abstracts.fluid-clamp(15, 45, 768, 1280);
+    gap: 30px 40px;
+    padding: 14px 0px 14px 0px;
+    overflow: hidden;
+    position: relative;
+    will-change: transform, opacity;
+  }
+
+  &__card {
+    width: 270px;
+    height: 435px;
+    border-radius: 9px;
+    overflow: hidden;
+    background-color: #fafafa;
+    cursor: pointer;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+  }
+
+  &__img {
+    display: block;
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+  }
+
+  &__card-title {
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    color: #545454;
+    padding: 0px;
+    margin: 31px 0px 0px 2px;
+    text-align: center;
+  }
+
+  &__card-btn {
+    display: flex;
+    margin: 30px auto 0px auto;
+    width: 187px;
+    padding: 0;
+  }
+
+  &__buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: abstracts.fluid-clamp(26, 45, 768, 1280);
+    gap: 20px;
+  }
+
+  &__btn_counter {
+    background-color: var(--color-primary);
+    pointer-events: none;
+  }
+}
+
+.slide-out-left {
+  animation: slideOutLeft cubic-bezier(0.455, 0.03, 0.515, 0.955) ease-in-out forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight 400ms ease-in-out forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 400ms ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 400ms ease-out forwards;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+  .our-friends__card:hover {
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-light-xl);
+    box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
+
+  .our-friends__card:hover .oval-button {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .our-friends {
+    &__container {
+      padding-bottom: abstracts.fluid-clamp(76, 100, 768, 1280);
+    }
+  }
+}
+
+@media only screen and (max-width: 634px) {
+  .our-friends {
+    &__container {
+      padding-top: abstracts.fluid-clamp(42, 80, 380, 634);
+      padding-left: abstracts.fluid-clamp(10, 20, 380, 634);
+      padding-right: abstracts.fluid-clamp(10, 20, 380, 634);
+      padding-bottom: abstracts.fluid-clamp(42, 76, 380, 634);
+    }
+
+    &__title {
+      font-size: abstracts.fluid-clamp(25, 35, 380, 634);;
+    }
+
+    &__cards-wrapper {
+      margin-top: 26px;
+    }
+
+    &__buttons-wrapper {
+      margin-top: 28px;
+      gap: abstracts.fluid-clamp(10, 20, 380, 634);
+    }
+  }
+}
